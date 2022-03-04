@@ -18,11 +18,12 @@ def recommendation(title):
     RECOBASE_URL = 'https://api.themoviedb.org/3'
     reco_path = f'/movie/{id}/recommendations'
     
-    reco_params = {'api_key':'7f292cc09a9aff763e3e54a81c1ec05a', 'language':'ko','page':'',}
+    reco_params = {'api_key':'7f292cc09a9aff763e3e54a81c1ec05a', 'language':'ko'}
     reco_response = requests.get(RECOBASE_URL + reco_path, params= reco_params).json()
     reco_url = requests.get(RECOBASE_URL + reco_path, params= reco_params).url
 
     name_list = []
+    return reco_url
     try:
         for i in range(len(reco_response)):
             name_list += [reco_response['results'][i]['title']]

@@ -4,7 +4,6 @@
 import json
 import requests 
 
-
 def popular_count():
     BASE_URL = 'https://api.themoviedb.org/3'
     path = '/movie/popular'
@@ -12,7 +11,6 @@ def popular_count():
     response = requests.get(BASE_URL+path, params= params).json()
     
     return len(response['results'])
-
 
 popular_count()
 

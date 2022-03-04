@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+
+  <title>Navbar Footer Test</title>
+</head>
+<body>
+  <!-- 01_nav_footer.html -->
+  <!-- 네비게이션 상단고정o, 로고이미지 링크 연결o - 02_home으로o , nav list는 ul과 lio
+   nav list는 오른쪽o, 리스트 각항목 클릭가능 링크 , 768px 미만일 경우 navlist 햄버거로 클릭하면 세부항목
+   Home 강조 ,  login 항목 클릭 시 modal 컴포넌트  ,  modal컴포넌트 form  비밀번호 표시 x-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark  sticky-top ">      
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a href="02_home.html" class="navbar-brand">
+        <img src="images/logo.png" art="로고" >
+      </a> 
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-md-0 text-white list-unstyled mb-0">
+            <li class="nav-item m-5"><a href="02_home.html" aira-current="page" class=" nav-link active text-decoration-none">Home</a></li>
+            <li class="nav-item m-5"><a href="03_community.html" class="nav-link text-decoration-none">Community</a></li>
+            <li class="nav-item m-5">
+              <a data-bs-toggle="modal" href="#loginModal">Login</a>
+              <div class="modal fade" id="logimModal" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">×</button>
+                      <h1 class="modal-title" align="center">로그인</h1>
+                    </div>
+                    <div class="modal-body">
+                      <th:block th:replace="~{/member/login :: setLgin(~{this::login} )}"></th:block>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+
+  <!-- 하단고정 수평정렬 빈부분내이름   -->
+  <footer class="d-flex justify-content-center fixed-bottom">
+    <p>Web-bootstrap PJT, by 엄윤규</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
+        

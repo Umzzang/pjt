@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center m-5">쇼생크 탈출 과 비슷한 영화 추천받기</h1>
+<div class="card flex-row row" style="">
+  <div class="col-12 col-md-6 col-lg-4 ">
+    <img src="{{ picture }}" class="img-fluid " alt="...">
+  </div>
+  <div class="card-body col-12 col-md-6 col-lg-8 ">
+    <h5 class="card-title">{{ title }}<span class="m-2 badge bg-success">{{ vote_average }}</span></h5>
+    <p class="card-text">{{ overview }}</p>
+    <p>개봉일 : {{ release_date }}</p>
+    <button type="button" class="btn btn-info w-100">상세정보</button>
+  </div>
+</div>
+
+{% endblock content %}
